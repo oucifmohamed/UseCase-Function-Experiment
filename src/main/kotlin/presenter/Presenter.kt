@@ -1,6 +1,10 @@
 package presenter
 
-class Presenter(private val fetchClients: () -> List<String>) {
+import usecase.FetchClientsUseCase
 
-    fun getClients(): List<String> = fetchClients()
+class Presenter(
+    private val useCase: FetchClientsUseCase
+) {
+
+    fun fetchClients(): List<String> = useCase()
 }

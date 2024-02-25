@@ -2,4 +2,7 @@ package usecase
 
 import repository.Repository
 
-fun fetchClientsUseCase(repository: Repository): List<String> = repository.fetchClients()
+typealias FetchClientsUseCase = () -> List<String>
+fun fetchClientsUseCase(
+    repository: Repository
+): List<String> = repository.fetchClients()
